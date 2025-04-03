@@ -1,0 +1,31 @@
+Digital Closet App Architecture:
+
+1. Mobile/Web Client (React/React Native)
+   │
+   ├── POST /api/process-image (Computer Vision)
+   ├── GET /api/outfit-suggestions (Outfit Generation)
+   └── GET /api/recommendations (Shopping Recommendations)
+   │
+2. API Gateway (Node.js/Express)
+   │
+   ├── Computer Vision Service (Python/TensorFlow)
+   │   ├── Background Removal
+   │   ├── Brand Recognition
+   │   └── Clothing Classification
+   │
+   ├── Outfit Generation Service (Python)
+   │   ├── Style Matching
+   │   └── Color Coordination
+   │
+   └── Recommendation Service (Python)
+       ├── Personal Recommendations
+       └── Trend Analysis
+   │
+3. Data Storage
+   ├── Firebase (Real-time wardrobe updates)
+   └── PostgreSQL (User data, outfits, recommendations)
+   │
+4. External Integrations
+   ├── Google Cloud Vision API (Brand detection)
+   ├── Remove.bg API (Background removal)
+   └── Affiliate Marketing APIs (Shopping links)
