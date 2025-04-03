@@ -55,3 +55,22 @@ const OutfitGenerator = ({ wardrobe }) => {
     </div>
   );
 };
+
+import tensorflow as tf
+from tensorflow.keras.layers import Input, LSTM, Dense, Concatenate
+
+class OutfitScorer:
+    def __init__(self):
+        self.model = self.build_siamese_model()
+    
+    def build_siamese_model(self):
+        # Input for each clothing item (embeddings)
+        input_top = Input(shape=(128,))
+        input_bottom = Input(shape=(128,))
+        input_shoes = Input(shape=(128,))
+        
+        # Merge and score compatibility
+        merged = Concatenate()([input_top, input_bottom, input_shoes])
+        score = Dense(1, activation='sigmoid')(merged)
+        
+        return tf.keras.Model(inputs=[input_top, input_bottom, input_shoes], outputs=score)
