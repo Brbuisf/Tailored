@@ -1,0 +1,17 @@
+# Mac
+.DS_Store
+
+# Node
+node_modules/
+.env
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# React Native
+android/
+ios/
+.expo/
