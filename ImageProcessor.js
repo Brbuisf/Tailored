@@ -1,4 +1,3 @@
-// components/ImageProcessor.js
 import * as tf from '@tensorflow/tfjs';
 import { vision } from '@google-cloud/vision';
 
